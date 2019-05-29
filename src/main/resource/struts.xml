@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+    <package name="success" namespace="/" extends="struts-default">
+
+        <action name="gologin" class="cn.loginAction">
+            <result name="loginSuccess">/WEB-INF/html/Root.html</result>
+            <result name="loginError" type="redirect">/login.html?key=2</result>
+        </action>
+
+        <action name="gotoRegister" class="cn.registerAction">
+            <result name="registerSuccess" type="redirect">/login.html?key=1</result>
+            <result name="registerError" type="redirect">/register.html?key=1</result>
+        </action>
+        
+        <action name="updateAdd" class="cn.updateAdd">
+            <result name="success">/WEB-INF/html/MyAddress.html</result>
+        </action>
+
+        <action name="goGoods" class="cn.goodsAction">
+            <result name ="goGoods">WEB-INF/html/goods.html</result >
+        </action>
+
+        <action name="deleteAction" class="cn.deleteAction">
+            <result>WEB-INF/html/goods.html</result>
+        </action>
+        
+        <action name="goShopping" class="cn.goShopping">
+            <result name="menu1">WEB-INF/html/menu1.html</result>
+            <result name="menu2">WEB-INF/html/menu2.html</result>
+            <result name="menu3">WEB-INF/html/menu3.html</result>
+            <result name="menu4">WEB-INF/html/menu4.html</result>
+            <result name="menu5">WEB-INF/html/menu5.html</result>
+            <result name="menu6">WEB-INF/html/menu6.html</result>
+        </action>
+
+        <action name ="dispatcher_*" class ="cn.Jump" method="{1}" >
+            <result name ="goMenu1">WEB-INF/html/menu1.html</result >
+            <result name ="goMenu2">WEB-INF/html/menu2.html</result >
+            <result name ="goMenu3">WEB-INF/html/menu3.html</result >
+            <result name ="goMenu4">WEB-INF/html/menu4.html</result >
+            <result name ="goMenu5">WEB-INF/html/menu5.html</result >
+            <result name ="goMenu6">WEB-INF/html/menu6.html</result >
+            <result name ="goMymessage">WEB-INF/html/MyMessage.html</result >
+            <result name ="goAddress">WEB-INF/html/MyAddress.html</result >
+            <result name ="goRoot">WEB-INF/html/Root.html</result >
+            <result name ="goBalance">WEB-INF/html/balance.html</result >
+            <result name ="goRecharge">WEB-INF/html/balance.html</result >
+        </action >
+        <action name="test" class="test.test">
+            <result name="success">html/yz.jsp</result>
+        </action>
+    </package>
+</struts>

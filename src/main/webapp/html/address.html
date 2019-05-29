@@ -1,0 +1,56 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<html>
+<head>
+    <title>可编辑的下拉列表</title>
+</head>
+<style type="text/css">
+    .cls_select_span {
+        position:absolute;
+        border:1pt solid #c1c1c1;
+        overflow:hidden;
+        width:88px;
+        height:19px;
+        clip:rect(-1px 90px 90px 70px);
+    }
+    .cls_input_span {
+        position:absolute;
+        border-top:1pt solid #c1c1c1;
+        border-left:1pt solid #c1c1c1;
+        border-bottom:1pt solid #c1c1c1;
+        width:70px;
+        height:19px;
+    }
+    .cls_option_defined {
+        color:#c2c2c2;
+    }
+    .cls_select {
+        width:90px;
+        height:20px;
+        margin:-2px;
+    }
+    .cls_input {
+        width:70px;
+        height:15px;
+        border:0pt;
+    }
+</style>
+<body>
+<span class="cls_select_span">
+    <select id="id_select" class="cls_select" onChange="selectOnChangeFunc()">
+        <option value="" class="cls_option_defined">1</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+    </select>
+</span>
+
+<span class="cls_input_span">
+    <input type="text" id="id_input" class="cls_input" value="可选择也可自定义输入">
+</span>
+<script>
+    function selectOnChangeFunc() {
+        document.getElementById('id_input').value = document.getElementById('id_select').options[document.getElementById('id_select').selectedIndex].value;
+    }
+</script>
+</body>
+</html>

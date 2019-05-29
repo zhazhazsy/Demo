@@ -1,0 +1,132 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<html>
+<head>
+<title></title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link href="css/bootstrap.css" rel="stylesheet">
+         <script src="js/jquery.js"></script>
+         <script type="text/javascript" src="js/bootstrap.min.js" ></script>
+</head>
+	<style type="text/css">
+		.logintxt{
+		     border-right: #ffffff 0px solid;
+		     border-top: #ffffff 0px solid;
+		     font-size: 9pt;
+		     border-left: #ffffff 0px solid;
+		     border-bottom: #c0c0c0 1px solid;
+		     background-color: #ffffff
+		}
+		#top,#button{
+			background-color: #1E9FFF;
+		}
+		#top:hover,#button:hover{
+			background-color: #40AFFE;
+			cursor:pointer; 
+		}
+	</style>
+<body>
+	<div class="top" style="background-image: url(img/bag/zcbagtop.PNG);height: 85px;width: 100%;">
+			<div style="width: 20%;height:80px;float: left;"></div>
+			<div style="height: 80px;width: 20%;float: left;">
+				<img src="img/bag/logintop.PNG" height="70px">
+			</div>
+			<div style="width: 20%;height:80px;float: left;"></div>
+			<div style="width: 40%;height:80px;float: left;">
+				<img src="img/imag/laba.PNG" style="float: left;"><img src="img/bag/font.PNG" height="30px" style="float: left;margin-top: 20px;" />
+			</div>
+	</div>
+	<div style="width: 1%;height: 400px; margin-top:80px ;float: left;">
+		
+	</div>
+	<div class="container"style="display: block;" id="t2">
+		<div class="row clearfix">
+			<div class="col-md-3 column">
+			</div>
+			<div class="col-md-6 column">
+				<div style="width: 100%;height: 400px; margin-top:80px ;box-shadow: 0px -2px 1px #C7DDEF,0px 5px 40px #C7DDEF;text-align: center;">
+					<div id="top" style="box-shadow: 0px 6px 10px #C7DDEF;color: #FFFFFF;height: 70px;width: 100%;text-align: center;" onclick="showt()"><font size="5" style="line-height: 70px;">用户登陆</font></div>
+					<form action="gologin" method="post">
+					<font size="4" color="#444444">账号</font><input class="logintxt" name="id" id="pass" value="请输入账号" type="text" style="width: 40%; height: 30px;margin-top: 60px;color: #9F9F9F;margin-left: 10px;" onclick="if(value=='请输入账号')value=''" onblur="if(!value)value='请输入账号'"/><br />
+					<font size="4" color="#444444">密码</font><input class="logintxt" name="pwd" id="pass" type="password" style="width: 40%; height: 30px;margin-top: 50px;color: #9F9F9F;margin-left: 10px;" /><br />
+					<button class="btn btn-lg btn-info" id="button" type="submit" style="margin-top: 45px; height: 40px;width: 290px;">登陆</button>
+					</form>
+					<div style="text-align: center; margin-top: 40px;">
+						<font size="2" color="#ADADAD" style="margin-right: 6px;">没有账号?</font><a href="register.html">立即注册</a>
+					</div>
+				</div>
+				
+			</div>
+			<div class="col-md-3 column">
+			</div>
+		</div>
+	</div>
+	<div class="container" style="display: none;" id="t1">
+		<div class="row clearfix">
+			<div class="col-md-3 column">		
+			</div>
+			<div class="col-md-6 column">
+				<div style="width: 100%;height: 400px; margin-top:80px ;box-shadow: 0px -2px 1px #C7DDEF,0px 5px 40px #C7DDEF;text-align: center;">
+					<div id="top" style="box-shadow: 0px 6px 10px #C7DDEF;color: #FFFFFF;height: 70px;width: 100%;text-align: center;" onclick="showo()"><font size="5" style="line-height: 70px;">外卖员登陆</font></div>
+					<form action="gologin" method="post">
+					<font size="4" color="#444444">账号</font><input class="logintxt" id="pass"  value="请输入账号" type="text" style="width: 40%; height: 30px;margin-top: 60px;color: #9F9F9F;margin-left: 10px;" onclick="if(value=='请输入账号')value=''" onblur="if(!value)value='请输入账号'"/><br />
+					<font size="4" color="#444444">密码</font><input class="logintxt" id="pass" type="password" style="width: 40%; height: 30px;margin-top: 50px;color: #9F9F9F;margin-left: 10px;" /><br />
+					<button class="btn btn-lg btn-info" type="submit" id="button"  style="margin-top: 45px; height: 40px;width: 290px;">登陆</button>
+					</form>
+				</div>
+				
+			</div>
+			<div class="col-md-3 column">
+			</div>
+		</div>
+	</div>
+	<div class="efoot" style="height: 30px; text-align: center; position: fixed;top: 750px;width: 100%;">	
+			<ul class="breadcrumb">
+					版权所有 瓜皮集团  有限公司
+				<li>
+					 <a href="#">服务协议</a>
+				</li>
+				<li>
+					 <a href="#">用户协议</a>
+				</li>
+				<li>
+					 <a href="#">隐私政策</a>
+				</li>
+				<li>
+					 <a href="#">法律条款</a>
+				</li>
+				<li>
+					 <a href="#">经营公示</a>
+				</li>
+				<li>
+					 <a href="#">联系我们</a>
+				</li>
+				<li>
+					 <a href="#">加入我们</a>
+					 粤ICP备 17011111-1号 
+				</li>
+			</ul>
+		</div>
+</body>
+</html>
+<script type="text/javascript">
+    window.onload = function() {
+        var querystr=location.search.substring(1,location.search.length);
+		if(querystr=="key=1"){
+            alert("注册成功")
+		}
+        if(querystr=="key=2"){
+            alert("登陆失败，账号或者密码错误！")
+        }
+    }
+	function showt(){
+		$("#t2").hide(500,function(){
+			$("#t1").show(500);
+		});
+	}
+	function showo(){
+		$("#t1").hide(500,function(){
+			$("#t2").show(500);
+		});
+	}
+</script>

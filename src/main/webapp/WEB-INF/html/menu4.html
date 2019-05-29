@@ -1,0 +1,246 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+     	 <link href="css/bootstrap.css" rel="stylesheet">      
+         <script src="js/jquery.js"></script>
+         <script type="text/javascript" src="js/bootstrap.min.js" ></script>
+		<title></title>
+		<style>
+			.thumbnail:hover{
+				box-shadow: 5px 5px 10px #888888,-5px 0px 10px #888888;
+				transform: scale(0.9);
+				}
+		</style>
+	</head>
+	<body>
+<div class="container-fluid">
+	<div class="row-fluid">
+		<div class="span12">
+			<div class="row-fluid">
+				<div class="col-xs-3 span3">
+					<div class="thumbnail" data-toggle="modal" data-target="#myModal">
+						<img alt="200x200" src="img/mune/12001.png" style="height: 150px;" />
+						<div class="caption" style="text-align: center; font-weight: bold;">
+							<p>
+								单人悠闲时光
+							</p>
+							<p>
+								<font color="#C12E2A" size="3">15.0元</font>
+							</p>
+							<p>
+								 <a class="btn btn-success" href="#">加入购物车</a> <a class="btn" href="#">查看评价</a>
+							</p>
+						</div>
+					</div>
+					
+					<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" 
+									aria-hidden="true">×
+								</button>
+								<div style="float: left;">
+									<img src="img/mune/12001.png" width="300px"/>
+								</div>
+								<h3 class="modal-title" id="myModalLabel" style="padding-top: 40px;">
+									单人悠闲时光
+								</h3>
+								<h6 style="color: #9D9D9D;"></h6>
+								<div class="modal-body">
+								浓情烤翅2块， 饮料选1杯（冰柠檬红茶/新热柠檬红茶）
+								</div>
+								<font color="red"size="4">15.0元</font>
+							</div>
+
+							<div class="modal-footer" >
+								<form action="goShopping?menuid=12001&menu=menu4" method="post">
+									<font style="float: left;font-size: 20px">数量：</font>
+									<div class="input-group" style="float: left;width: 120px">
+										<span class="input-group-btn">
+											<button class="btn btn-default" type="button" onclick="red1()">
+												-
+											</button>
+										</span>
+										<input type="text" class="form-control" value="1" name="amounts">
+										<span class="input-group-btn">
+											<button class="btn btn-default" type="button" onclick="add1()">
+												+
+											</button>
+										</span>
+									</div>
+									<button type="button" class="btn btn-default"
+											data-dismiss="modal">关闭
+									</button>
+									<a href="#">
+										<button type="submit" class="btn btn-primary" onclick="shopping()">
+											加入购物车
+										</button>
+									</a>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+				</div>
+				<div class="col-xs-3 span3">
+					<div class="thumbnail" data-toggle="modal" data-target="#myModa2">
+						<img alt="200x200" src="img/mune/12002.png" style="height: 150px;" />
+						<div class="caption" style="text-align: center; font-weight: bold;">
+							<p>
+								解馋双人套餐 
+							</p>
+							<p>
+								<font color="#C12E2A" size="3">58.0元</font>
+							</p>
+							<p>
+								 <a class="btn btn-success" href="#">加入购物车</a> <a class="btn" href="#">查看评价</a>
+							</p>
+						</div>
+					</div>
+					
+					<div class="modal fade" id="myModa2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" 
+									aria-hidden="true">×
+								</button>
+								<div style="float: left;">
+									<img src="img/mune/12002.png" width="300px"/>
+								</div>
+								<h3 class="modal-title" id="myModalLabel" style="padding-top: 40px;">
+									解馋双人套餐 
+								</h3>
+								<h6 style="color: #9D9D9D;"></h6>
+								<div class="modal-body">
+								浓情烤翅2块， 饮料选1杯（冰柠檬红茶/新热柠檬红茶）
+								</div>
+								<font color="red"size="4">58.0元</font>
+							</div>
+
+							<div class="modal-footer" >
+								<form action="goShopping?menuid=12002&menu=menu4" method="post">
+									<font style="float: left;font-size: 20px">数量：</font>
+									<div class="input-group" style="float: left;width: 120px">
+										<span class="input-group-btn">
+											<button class="btn btn-default" type="button" onclick="red1()">
+												-
+											</button>
+										</span>
+										<input type="text" class="form-control" value="1" name="amounts">
+										<span class="input-group-btn">
+											<button class="btn btn-default" type="button" onclick="add1()">
+												+
+											</button>
+										</span>
+									</div>
+									<button type="button" class="btn btn-default"
+											data-dismiss="modal">关闭
+									</button>
+									<a href="#">
+										<button type="submit" class="btn btn-primary" onclick="shopping()">
+											加入购物车
+										</button>
+									</a>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+				</div>
+				<div class="col-xs-3 span3">
+					<div class="thumbnail" data-toggle="modal" data-target="#myModa3">
+						<img alt="200x200" src="img/mune/12003.png" style="height: 150px;"/>
+						<div class="caption" style="text-align: center; font-weight: bold;">
+							<p>
+								尊赏丝滑奶茶 
+							</p>
+							<p>
+								<font color="#C12E2A" size="3">15.0元</font>
+							</p>
+							<p>
+								 <a class="btn btn-success" href="#">加入购物车</a> <a class="btn" href="#">查看评价</a>
+							</p>
+						</div>
+					</div>
+					
+					<div class="modal fade" id="myModa3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" 
+									aria-hidden="true">×
+								</button>
+								<div style="float: left;">
+									<img src="img/mune/12003.png" width="300px"/>
+								</div>
+								<h3 class="modal-title" id="myModalLabel" style="padding-top: 40px;">
+									尊赏丝滑奶茶 
+								</h3>
+								<h6 style="color: #9D9D9D;"></h6>
+								<div class="modal-body">
+								醇香浓郁的热奶茶奶香四溢，茶味醇厚，幼滑如丝，口感醇正令人回味！（300ml）。<br />
+								主要原料：水、全脂淡奶、炼乳、红茶　
+								</div>
+								<font color="red"size="4">15.0元</font>
+							</div>
+
+							<div class="modal-footer" >
+								<form action="goShopping?menuid=12003&menu=menu4" method="post">
+									<font style="float: left;font-size: 20px">数量：</font>
+									<div class="input-group" style="float: left;width: 120px">
+										<span class="input-group-btn">
+											<button class="btn btn-default" type="button" onclick="red1()">
+												-
+											</button>
+										</span>
+										<input type="text" class="form-control" value="1" name="amounts">
+										<span class="input-group-btn">
+											<button class="btn btn-default" type="button" onclick="add1()">
+												+
+											</button>
+										</span>
+									</div>
+									<button type="button" class="btn btn-default"
+											data-dismiss="modal">关闭
+									</button>
+									<a href="#">
+										<button type="submit" class="btn btn-primary" onclick="shopping()">
+											加入购物车
+										</button>
+									</a>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+				</div>
+				<div class="col-xs-3 span3">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<SCRIPT>
+    function shopping() {
+        alert("以成功加入购物车\n请在会员中心查看");
+    }
+    function add1() {
+        var a = $(".form-control").val();
+        var b = parseInt(a)+1;
+        $(".form-control").val(b);
+    }
+    function red1() {
+        var a = $(".form-control").val();
+        if(parseInt(a)) {
+            var b = parseInt(a) - 1;
+            $(".form-control").val(b);
+        }
+    }
+</SCRIPT>
+	</body>
+</html>

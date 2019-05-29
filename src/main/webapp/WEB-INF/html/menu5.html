@@ -1,0 +1,451 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+     	 <link href="css/bootstrap.css" rel="stylesheet">      
+         <script src="js/jquery.js"></script>
+         <script type="text/javascript" src="js/bootstrap.min.js" ></script>
+		<title></title>
+		<style>
+			.thumbnail:hover{
+				box-shadow: 5px 5px 10px #888888,-5px 0px 10px #888888;
+				transform: scale(0.9);
+				}
+		</style>
+	</head>
+	<body>
+<div class="container-fluid">
+	<div class="row-fluid">
+		<div class="span12">
+			<div class="row-fluid">
+				<div class="col-xs-3 span3">
+					<div class="thumbnail" data-toggle="modal" data-target="#myModal">
+						<img alt="200x200" src="img/mune/13001.png" style="height: 150px;"/>
+						<div class="caption" style="text-align: center; font-weight: bold;">
+							<p>
+								经典意式肉酱面 
+							</p>
+							<p>
+								<font color="#C12E2A" size="3">35.0元</font>
+							</p>
+							<p>
+								 <a class="btn btn-success" href="#">加入购物车</a> <a class="btn" href="#">查看评价</a>
+							</p>
+						</div>
+					</div>
+					
+					<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" 
+									aria-hidden="true">×
+								</button>
+								<div style="float: left;">
+									<img src="img/mune/13001.png" width="300px"/>
+								</div>
+								<h3 class="modal-title" id="myModalLabel" style="padding-top: 40px;">
+									经典意式肉酱面 
+								</h3>
+								<h6 style="color: #9D9D9D;"></h6>
+								<div class="modal-body">
+								大颗肉粒搭配浓郁酱汁、加入意大利进口初榨橄榄油和细面一起炒制。<br />
+								主要原料:意大利面、意式肉酱汁、樱桃番茄
+								</div>
+								<font color="red"size="4">35.0元</font>
+							</div>
+
+							<div class="modal-footer" >
+								<form action="goShopping?menuid=13001&menu=menu5" method="post">
+									<font style="float: left;font-size: 20px">数量：</font>
+									<div class="input-group" style="float: left;width: 120px">
+										<span class="input-group-btn">
+											<button class="btn btn-default" type="button" onclick="red1()">
+												-
+											</button>
+										</span>
+										<input type="text" class="form-control" value="1" name="amounts">
+										<span class="input-group-btn">
+											<button class="btn btn-default" type="button" onclick="add1()">
+												+
+											</button>
+										</span>
+									</div>
+									<button type="button" class="btn btn-default"
+											data-dismiss="modal">关闭
+									</button>
+									<a href="#">
+										<button type="submit" class="btn btn-primary" onclick="shopping()">
+											加入购物车
+										</button>
+									</a>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+				</div>
+				
+				<div class="col-xs-3 span3">
+					<div class="thumbnail" data-toggle="modal" data-target="#myModa2">
+						<img alt="200x200" src="img/mune/13002.png" style="height: 150px;"/>
+						<div class="caption" style="text-align: center; font-weight: bold;">
+							<p>
+								松子鸡肉罗勒意面 
+							</p>
+							<p>
+								<font color="#C12E2A" size="3">37.0元</font>
+							</p>
+							<p>
+								 <a class="btn btn-success" href="#">加入购物车</a> <a class="btn" href="#">查看评价</a>
+							</p>
+						</div>
+					</div>
+					
+					<div class="modal fade" id="myModa2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" 
+									aria-hidden="true">×
+								</button>
+								<div style="float: left;">
+									<img src="img/mune/13002.png" width="300px"/>
+								</div>
+								<h3 class="modal-title" id="myModalLabel" style="padding-top: 40px;">
+									松子鸡肉罗勒意面 
+								</h3>
+								<h6 style="color: #9D9D9D;"></h6>
+								<div class="modal-body">
+								parmesan cheese是意大利面的经典组合之一。<br />
+								主要原料:意大利面、罗勒青酱汁、鸡肉、蔬菜、松仁
+								</div>
+								<font color="red"size="4">37.0元</font>
+							</div>
+
+							<div class="modal-footer" >
+								<form action="goShopping?menuid=13002&menu=menu5" method="post">
+									<font style="float: left;font-size: 20px">数量：</font>
+									<div class="input-group" style="float: left;width: 120px">
+										<span class="input-group-btn">
+											<button class="btn btn-default" type="button" onclick="red1()">
+												-
+											</button>
+										</span>
+										<input type="text" class="form-control" value="1" name="amounts">
+										<span class="input-group-btn">
+											<button class="btn btn-default" type="button" onclick="add1()">
+												+
+											</button>
+										</span>
+									</div>
+									<button type="button" class="btn btn-default"
+											data-dismiss="modal">关闭
+									</button>
+									<a href="#">
+										<button type="submit" class="btn btn-primary" onclick="shopping()">
+											加入购物车
+										</button>
+									</a>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+				</div>
+				
+				<div class="col-xs-3 span3">
+					<div class="thumbnail" data-toggle="modal" data-target="#myModa3">
+						<img alt="200x200" src="img/mune/13003.png" style="height: 150px;"/>
+						<div class="caption" style="text-align: center; font-weight: bold;">
+							<p>
+								松子鸡肉罗勒意面 
+							</p>
+							<p>
+								<font color="#C12E2A" size="3">40.0元</font>
+							</p>
+							<p>
+								 <a class="btn btn-success" href="#">加入购物车</a> <a class="btn" href="#">查看评价</a>
+							</p>
+						</div>
+					</div>
+					
+					<div class="modal fade" id="myModa3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" 
+									aria-hidden="true">×
+								</button>
+								<div style="float: left;">
+									<img src="img/mune/13003.png" width="300px"/>
+								</div>
+								<h3 class="modal-title" id="myModalLabel" style="padding-top: 40px;">
+									松子鸡肉罗勒意面 
+								</h3>
+								<h6 style="color: #9D9D9D;"></h6>
+								<div class="modal-body">
+								主要原料:意大利面、西班牙风味酱汁、混合海鲜（虾、鱿鱼、章鱼）、蔬菜（蘑菇、青椒、樱桃番茄）、干酪 
+								</div>
+								<font color="red"size="4">40.0元</font>
+							</div>
+
+							<div class="modal-footer" >
+								<form action="goShopping?menuid=13003&menu=menu5" method="post">
+									<font style="float: left;font-size: 20px">数量：</font>
+									<div class="input-group" style="float: left;width: 120px">
+										<span class="input-group-btn">
+											<button class="btn btn-default" type="button" onclick="red1()">
+												-
+											</button>
+										</span>
+										<input type="text" class="form-control" value="1" name="amounts">
+										<span class="input-group-btn">
+											<button class="btn btn-default" type="button" onclick="add1()">
+												+
+											</button>
+										</span>
+									</div>
+									<button type="button" class="btn btn-default"
+											data-dismiss="modal">关闭
+									</button>
+									<a href="#">
+										<button type="submit" class="btn btn-primary" onclick="shopping()">
+											加入购物车
+										</button>
+									</a>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+				</div>
+				
+				<div class="col-xs-3 span3">
+					<div class="thumbnail" data-toggle="modal" data-target="#myModa4">
+						<img alt="200x200" src="img/mune/13004.png" style="height: 150px;"/>
+						<div class="caption" style="text-align: center; font-weight: bold;">
+							<p>
+								照烧鸡肉炒饭 
+							</p>
+							<p>
+								<font color="#C12E2A" size="3">30.0元</font>
+							</p>
+							<p>
+								 <a class="btn btn-success" href="#">加入购物车</a> <a class="btn" href="#">查看评价</a>
+							</p>
+						</div>
+					</div>
+					
+					<div class="modal fade" id="myModa4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" 
+									aria-hidden="true">×
+								</button>
+								<div style="float: left;">
+									<img src="img/mune/13004.png" width="300px"/>
+								</div>
+								<h3 class="modal-title" id="myModalLabel" style="padding-top: 40px;">
+									照烧鸡肉炒饭 
+								</h3>
+								<h6 style="color: #9D9D9D;"></h6>
+								<div class="modal-body">
+								鲜香培根搭配特色蔬菜肉末酱，和米饭一起翻炒，飘香味浓！ <br />
+								主要原料:米饭、肉酱、培根、玉米粒 
+								</div>
+								<font color="red"size="4">30.0元</font>
+							</div>
+
+							<div class="modal-footer" >
+								<form action="goShopping?menuid=13004&menu=menu5" method="post">
+									<font style="float: left;font-size: 20px">数量：</font>
+									<div class="input-group" style="float: left;width: 120px">
+										<span class="input-group-btn">
+											<button class="btn btn-default" type="button" onclick="red1()">
+												-
+											</button>
+										</span>
+										<input type="text" class="form-control" value="1" name="amounts">
+										<span class="input-group-btn">
+											<button class="btn btn-default" type="button" onclick="add1()">
+												+
+											</button>
+										</span>
+									</div>
+									<button type="button" class="btn btn-default"
+											data-dismiss="modal">关闭
+									</button>
+									<a href="#">
+										<button type="submit" class="btn btn-primary" onclick="shopping()">
+											加入购物车
+										</button>
+									</a>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+				</div>
+				
+				<div class="col-xs-3 span3">
+					<div class="thumbnail" data-toggle="modal" data-target="#myModa5">
+						<img alt="200x200" src="img/mune/13005.png" style="height: 150px;"/>
+						<div class="caption" style="text-align: center; font-weight: bold;">
+							<p>
+								照烧鸡肉炒饭 
+							</p>
+							<p>
+								<font color="#C12E2A" size="3">30.0元</font>
+							</p>
+							<p>
+								 <a class="btn btn-success" href="#">加入购物车</a> <a class="btn" href="#">查看评价</a>
+							</p>
+						</div>
+					</div>
+					
+					<div class="modal fade" id="myModa5" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" 
+									aria-hidden="true">×
+								</button>
+								<div style="float: left;">
+									<img src="img/mune/13005.png" width="300px"/>
+								</div>
+								<h3 class="modal-title" id="myModalLabel" style="padding-top: 40px;">
+									照烧鸡肉炒饭 
+								</h3>
+								<h6 style="color: #9D9D9D;"></h6>
+								<div class="modal-body">
+								精选鸡腿肉丁、东北大米与培根、鸡蛋用照烧酱汁快速翻炒。<br />
+								主要原料:米饭、鸡腿肉、鸡蛋、培根、洋葱 
+								</div>
+								<font color="red"size="4">30.0元</font>
+							</div>
+
+							<div class="modal-footer" >
+								<form action="goShopping?menuid=13005&menu=menu5" method="post">
+									<font style="float: left;font-size: 20px">数量：</font>
+									<div class="input-group" style="float: left;width: 120px">
+										<span class="input-group-btn">
+											<button class="btn btn-default" type="button" onclick="red1()">
+												-
+											</button>
+										</span>
+										<input type="text" class="form-control" value="1" name="amounts">
+										<span class="input-group-btn">
+											<button class="btn btn-default" type="button" onclick="add1()">
+												+
+											</button>
+										</span>
+									</div>
+									<button type="button" class="btn btn-default"
+											data-dismiss="modal">关闭
+									</button>
+									<a href="#">
+										<button type="submit" class="btn btn-primary" onclick="shopping()">
+											加入购物车
+										</button>
+									</a>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+				</div>
+				
+				<div class="col-xs-3 span3">
+					<div class="thumbnail" data-toggle="modal" data-target="#myModa6">
+						<img alt="200x200" src="img/mune/13006.png" style="height: 150px;"/>
+						<div class="caption" style="text-align: center; font-weight: bold;">
+							<p>
+								匈牙利风情牛肉焗饭 
+							</p>
+							<p>
+								<font color="#C12E2A" size="3">38.0元</font>
+							</p>
+							<p>
+								 <a class="btn btn-success" href="#">加入购物车</a> <a class="btn" href="#">查看评价</a>
+							</p>
+						</div>
+					</div>
+					
+					<div class="modal fade" id="myModa6" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" 
+									aria-hidden="true">×
+								</button>
+								<div style="float: left;">
+									<img src="img/mune/13006.png" width="300px"/>
+								</div>
+								<h3 class="modal-title" id="myModalLabel" style="padding-top: 40px;">
+									匈牙利风情牛肉焗饭 
+								</h3>
+								<h6 style="color: #9D9D9D;"></h6>
+								<div class="modal-body">
+								牛肉鲜香柔嫩，酱汁醇厚，浓郁匈牙利风情美味，口口难忘。<br />
+								主要原料:米饭、酱汁、土豆、牛肉、芝士  
+								</div>
+								<font color="red"size="4">38.0元</font>
+							</div>
+
+							<div class="modal-footer" >
+								<form action="goShopping?menuid=13006&menu=menu5" method="post">
+									<font style="float: left;font-size: 20px">数量：</font>
+									<div class="input-group" style="float: left;width: 120px">
+										<span class="input-group-btn">
+											<button class="btn btn-default" type="button" onclick="red1()">
+												-
+											</button>
+										</span>
+										<input type="text" class="form-control" value="1" name="amounts">
+										<span class="input-group-btn">
+											<button class="btn btn-default" type="button" onclick="add1()">
+												+
+											</button>
+										</span>
+									</div>
+									<button type="button" class="btn btn-default"
+											data-dismiss="modal">关闭
+									</button>
+									<a href="#">
+										<button type="submit" class="btn btn-primary" onclick="shopping()">
+											加入购物车
+										</button>
+									</a>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+</div>
+<SCRIPT>
+    function shopping() {
+        alert("以成功加入购物车\n请在会员中心查看");
+    }
+    function add1() {
+        var a = $(".form-control").val();
+        var b = parseInt(a)+1;
+        $(".form-control").val(b);
+    }
+    function red1() {
+        var a = $(".form-control").val();
+        if(parseInt(a)) {
+            var b = parseInt(a) - 1;
+            $(".form-control").val(b);
+        }
+    }
+</SCRIPT>
+	</body>
+</html>

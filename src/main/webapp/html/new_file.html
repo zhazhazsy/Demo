@@ -1,0 +1,39 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="s" uri="/struts-tags" %>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<script src="js/jquery.js" ></script>
+	<title></title>
+</head>
+<script type="text/javascript">
+    function loadXMLDoc()
+    {
+        var xmlhttp;
+        if (window.XMLHttpRequest)
+        {// code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp=new XMLHttpRequest();
+        }
+        else{   // code for IE6, IE5
+            xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange=function()
+        {
+            if (xmlhttp.readyState==4 && xmlhttp.status==200)
+            {
+                document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
+            }
+        }
+
+        xmlhttp.open("post","test",false);
+        xmlhttp.send();
+    }
+</script>
+<body>
+<input type="text" onchange="loadXMLDoc()" value="">
+<div id="myDiv" style="width: 800px;height: 1000px;background-color: #d4d4d4">
+
+</div>
+</body>
+
+</html>

@@ -1,0 +1,581 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+     	 <link href="css/bootstrap.css" rel="stylesheet">      
+         <script src="js/jquery.js"></script>
+         <script type="text/javascript" src="js/bootstrap.min.js" ></script>
+		<title></title>
+		<style>
+			.thumbnail:hover{
+				box-shadow: 5px 5px 10px #888888,-5px 0px 10px #888888;
+				transform: scale(0.9);
+				}
+		</style>
+	</head>
+	<body>
+<div class="container-fluid">
+	<div class="row-fluid">
+		<div class="span12">
+			<div class="row-fluid">
+				<div class="col-xs-3 span3">
+					<div class="thumbnail" data-toggle="modal" data-target="#myModal">
+						<img alt="200x200" src="img/mune/11001.png" style="height: 150px;"/>
+						<div class="caption" style="text-align: center; font-weight: bold;">
+							<p>
+								皮蛋瘦肉粥
+							</p>
+							<p>
+								<font color="#C12E2A" size="3">13.0元</font>
+							</p>
+							<p>
+								 <a class="btn btn-success" href="#">加入购物车</a> <a class="btn" href="#">查看评价</a>
+							</p>
+						</div>
+					</div>
+					
+					<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" 
+									aria-hidden="true">×
+								</button>
+								<div style="float: left;">
+									<img src="img/mune/11001.png" width="300px"/>
+								</div>
+								<h3 class="modal-title" id="myModalLabel" style="padding-top: 40px;">
+									皮蛋瘦肉粥
+								</h3>
+								<h6 style="color: #9D9D9D;"></h6>
+								<div class="modal-body">
+								
+								</div>
+								<font color="red"size="4">13.0元</font>
+							</div>
+
+							<div class="modal-footer" >
+								<form action="goShopping?menuid=11001&menu=menu3" method="post">
+									<font style="float: left;font-size: 20px">数量：</font>
+									<div class="input-group" style="float: left;width: 120px">
+										<span class="input-group-btn">
+											<button class="btn btn-default" type="button" onclick="red1()">
+												-
+											</button>
+										</span>
+										<input type="text" class="form-control" value="1" name="amounts">
+										<span class="input-group-btn">
+											<button class="btn btn-default" type="button" onclick="add1()">
+												+
+											</button>
+										</span>
+									</div>
+									<button type="button" class="btn btn-default"
+											data-dismiss="modal">关闭
+									</button>
+									<a href="#">
+										<button type="submit" class="btn btn-primary" onclick="shopping()">
+											加入购物车
+										</button>
+									</a>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+				</div>
+				<div class="col-xs-3 span3">
+					<div class="thumbnail" data-toggle="modal" data-target="#myModa2">
+						<img alt="200x200" src="img/mune/11002.png" style="height: 150px;"/>
+						<div class="caption" style="text-align: center; font-weight: bold;">
+							<p>
+								干贝鲜虾粥 
+							</p>
+							<p>
+								<font color="#C12E2A" size="3">13.0元</font>
+							</p>
+							<p>
+								 <a class="btn btn-success" href="#">加入购物车</a> <a class="btn" href="#">查看评价</a>
+							</p>
+						</div>
+					</div>
+					
+					<div class="modal fade" id="myModa2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" 
+									aria-hidden="true">×
+								</button>
+								<div style="float: left;">
+									<img src="img/mune/11002.png" width="300px"/>
+								</div>
+								<h3 class="modal-title" id="myModalLabel" style="padding-top: 40px;">
+									干贝鲜虾粥 
+								</h3>
+								<h6 style="color: #9D9D9D;"></h6>
+								<div class="modal-body">
+								
+								</div>
+								<font color="red"size="4">13.0元</font>
+							</div>
+
+							<div class="modal-footer" >
+								<form action="goShopping?menuid=11002&menu=menu3" method="post">
+									<font style="float: left;font-size: 20px">数量：</font>
+									<div class="input-group" style="float: left;width: 120px">
+										<span class="input-group-btn">
+											<button class="btn btn-default" type="button" onclick="red1()">
+												-
+											</button>
+										</span>
+										<input type="text" class="form-control" value="1" name="amounts">
+										<span class="input-group-btn">
+											<button class="btn btn-default" type="button" onclick="add1()">
+												+
+											</button>
+										</span>
+									</div>
+									<button type="button" class="btn btn-default"
+											data-dismiss="modal">关闭
+									</button>
+									<a href="#">
+										<button type="submit" class="btn btn-primary" onclick="shopping()">
+											加入购物车
+										</button>
+									</a>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				</div>
+				<div class="col-xs-3 span3">
+					<div class="thumbnail" data-toggle="modal" data-target="#myModa3">
+						<img alt="200x200" src="img/mune/11003.png" style="height: 150px;"/>
+						<div class="caption" style="text-align: center; font-weight: bold;">
+							<p>
+								早餐3人餐 
+							</p>
+							<p>
+								<font color="#C12E2A" size="3">58.0元</font>
+							</p>
+							<p>
+								 <a class="btn btn-success" href="#">加入购物车</a> <a class="btn" href="#">查看评价</a>
+							</p>
+						</div>
+					</div>
+					
+					<div class="modal fade" id="myModa3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" 
+									aria-hidden="true">×
+								</button>
+								<div style="float: left;">
+									<img src="img/mune/11003.png" width="300px"/>
+								</div>
+								<h3 class="modal-title" id="myModalLabel" style="padding-top: 40px;">
+									早餐3人餐 
+								</h3>
+								<h6 style="color: #9D9D9D;"> </h6>
+								<div class="modal-body">
+								套餐包括：可选三明治，帕尼尼三份，可选中式粥三份
+								</div>
+								<font color="red"size="4">58.0元</font>
+							</div>
+
+							<div class="modal-footer" >
+								<form action="goShopping?menuid=11003&menu=menu3" method="post">
+									<font style="float: left;font-size: 20px">数量：</font>
+									<div class="input-group" style="float: left;width: 120px">
+										<span class="input-group-btn">
+											<button class="btn btn-default" type="button" onclick="red1()">
+												-
+											</button>
+										</span>
+										<input type="text" class="form-control" value="1" name="amounts">
+										<span class="input-group-btn">
+											<button class="btn btn-default" type="button" onclick="add1()">
+												+
+											</button>
+										</span>
+									</div>
+									<button type="button" class="btn btn-default"
+											data-dismiss="modal">关闭
+									</button>
+									<a href="#">
+										<button type="submit" class="btn btn-primary" onclick="shopping()">
+											加入购物车
+										</button>
+									</a>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				</div>
+				<div class="col-xs-3 span3">
+					<div class="thumbnail" data-toggle="modal" data-target="#myModa4">
+						<img alt="200x200" src="img/mune/11004.png" style="height: 150px;"/>
+						<div class="caption" style="text-align: center; font-weight: bold;">
+							<p>
+								早餐2人餐  
+							</p>
+							<p>
+								<font color="#C12E2A" size="3">40.0元</font>
+							</p>
+							<p>
+								 <a class="btn btn-success" href="#">加入购物车</a> <a class="btn" href="#">查看评价</a>
+							</p>
+						</div>
+					</div>
+					
+					<div class="modal fade" id="myModa4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" 
+									aria-hidden="true">×
+								</button>
+								<div style="float: left;">
+									<img src="img/mune/11004.png" width="300px"/>
+								</div>
+								<h3 class="modal-title" id="myModalLabel" style="padding-top: 40px;">
+									早餐2人餐  
+								</h3>
+								<h6 style="color: #9D9D9D;"></h6>
+								<div class="modal-body">
+								套餐包括：可选三明治，帕尼尼两份，可选中式粥两份
+								</div>
+								<font color="red"size="4">40.0元</font>
+							</div>
+
+							<div class="modal-footer" >
+								<form action="goShopping?menuid=11004&menu=menu3" method="post">
+									<font style="float: left;font-size: 20px">数量：</font>
+									<div class="input-group" style="float: left;width: 120px">
+										<span class="input-group-btn">
+											<button class="btn btn-default" type="button" onclick="red1()">
+												-
+											</button>
+										</span>
+										<input type="text" class="form-control" value="1" name="amounts">
+										<span class="input-group-btn">
+											<button class="btn btn-default" type="button" onclick="add1()">
+												+
+											</button>
+										</span>
+									</div>
+									<button type="button" class="btn btn-default"
+											data-dismiss="modal">关闭
+									</button>
+									<a href="#">
+										<button type="submit" class="btn btn-primary" onclick="shopping()">
+											加入购物车
+										</button>
+									</a>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+				</div>
+				
+				<div class="col-xs-3 span3">
+					<div class="thumbnail" data-toggle="modal" data-target="#myModa5">
+						<img alt="200x200" src="img/mune/11005.png" style="height: 150px;"/>
+						<div class="caption" style="text-align: center; font-weight: bold;">
+							<p>
+								西式2人餐 
+							</p>
+							<p>
+								<font color="#C12E2A" size="3">40.0元</font>
+							</p>
+							<p>
+								 <a class="btn btn-success" href="#">加入购物车</a> <a class="btn" href="#">查看评价</a>
+							</p>
+						</div>
+					</div>
+					
+					<div class="modal fade" id="myModa5" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" 
+									aria-hidden="true">×
+								</button>
+								<div style="float: left;">
+									<img src="img/mune/11005.png" width="300px"/>
+								</div>
+								<h3 class="modal-title" id="myModalLabel" style="padding-top: 40px;">
+									西式2人餐 
+								</h3>
+								<h6 style="color: #9D9D9D;"></h6>
+								<div class="modal-body">
+								套餐包括：可选三明治，帕尼尼两份，可选饮料两份 
+								</div>
+								<font color="red"size="4">40.0元</font>
+							</div>
+
+							<div class="modal-footer" >
+								<form action="goShopping?menuid=11005&menu=menu3" method="post">
+									<font style="float: left;font-size: 20px">数量：</font>
+									<div class="input-group" style="float: left;width: 120px">
+										<span class="input-group-btn">
+											<button class="btn btn-default" type="button" onclick="red1()">
+												-
+											</button>
+										</span>
+										<input type="text" class="form-control" value="1" name="amounts">
+										<span class="input-group-btn">
+											<button class="btn btn-default" type="button" onclick="add1()">
+												+
+											</button>
+										</span>
+									</div>
+									<button type="button" class="btn btn-default"
+											data-dismiss="modal">关闭
+									</button>
+									<a href="#">
+										<button type="submit" class="btn btn-primary" onclick="shopping()">
+											加入购物车
+										</button>
+									</a>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+				</div>
+				
+				<div class="col-xs-3 span3">
+					<div class="thumbnail" data-toggle="modal" data-target="#myModa6">
+						<img alt="200x200" src="img/mune/11006.png" style="height: 150px;"/>
+						<div class="caption" style="text-align: center; font-weight: bold;">
+							<p>
+								西式3人餐 
+							</p>
+							<p>
+								<font color="#C12E2A" size="3">58.0元</font>
+							</p>
+							<p>
+								 <a class="btn btn-success" href="#">加入购物车</a> <a class="btn" href="#">查看评价</a>
+							</p>
+						</div>
+					</div>
+					
+					<div class="modal fade" id="myModa6" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" 
+									aria-hidden="true">×
+								</button>
+								<div style="float: left;">
+									<img src="img/mune/11006.png" width="300px"/>
+								</div>
+								<h3 class="modal-title" id="myModalLabel" style="padding-top: 40px;">
+									西式3人餐 
+								</h3>
+								<h6 style="color: #9D9D9D;"></h6>
+								<div class="modal-body">
+								套餐包括：可选三明治，帕尼尼三份，可选饮料三份  
+								</div>
+								<font color="red"size="4">58.0元</font>
+							</div>
+
+							<div class="modal-footer" >
+								<form action="goShopping?menuid=11006&menu=menu3" method="post">
+									<font style="float: left;font-size: 20px">数量：</font>
+									<div class="input-group" style="float: left;width: 120px">
+										<span class="input-group-btn">
+											<button class="btn btn-default" type="button" onclick="red1()">
+												-
+											</button>
+										</span>
+										<input type="text" class="form-control" value="1" name="amounts">
+										<span class="input-group-btn">
+											<button class="btn btn-default" type="button" onclick="add1()">
+												+
+											</button>
+										</span>
+									</div>
+									<button type="button" class="btn btn-default"
+											data-dismiss="modal">关闭
+									</button>
+									<a href="#">
+										<button type="submit" class="btn btn-primary" onclick="shopping()">
+											加入购物车
+										</button>
+									</a>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+				</div>
+				
+				<div class="col-xs-3 span3">
+					<div class="thumbnail" data-toggle="modal" data-target="#myModa7">
+						<img alt="200x200" src="img/mune/11007.png" style="height: 150px;"/>
+						<div class="caption" style="text-align: center; font-weight: bold;">
+							<p>
+								炒蛋三明治 
+							</p>
+							<p>
+								<font color="#C12E2A" size="3">15.0元</font>
+							</p>
+							<p>
+								 <a class="btn btn-success" href="#">加入购物车</a> <a class="btn" href="#">查看评价</a>
+							</p>
+						</div>
+					</div>
+					
+					<div class="modal fade" id="myModa7" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" 
+									aria-hidden="true">×
+								</button>
+								<div style="float: left;">
+									<img src="img/mune/11007.png" width="300px"/>
+								</div>
+								<h3 class="modal-title" id="myModalLabel" style="padding-top: 40px;">
+									炒蛋三明治 
+								</h3>
+								<h6 style="color: #9D9D9D;"></h6>
+								<div class="modal-body">
+								套餐包括：培根炒蛋三明治  
+								</div>
+								<font color="red"size="4">15.0元</font>
+							</div>
+
+							<div class="modal-footer" >
+								<form action="goShopping?menuid=11007&menu=menu3" method="post">
+									<font style="float: left;font-size: 20px">数量：</font>
+									<div class="input-group" style="float: left;width: 120px">
+										<span class="input-group-btn">
+											<button class="btn btn-default" type="button" onclick="red1()">
+												-
+											</button>
+										</span>
+										<input type="text" class="form-control" value="1" name="amounts">
+										<span class="input-group-btn">
+											<button class="btn btn-default" type="button" onclick="add1()">
+												+
+											</button>
+										</span>
+									</div>
+									<button type="button" class="btn btn-default"
+											data-dismiss="modal">关闭
+									</button>
+									<a href="#">
+										<button type="submit" class="btn btn-primary" onclick="shopping()">
+											加入购物车
+										</button>
+									</a>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+				</div>
+				
+				<div class="col-xs-3 span3">
+					<div class="thumbnail" data-toggle="modal" data-target="#myModa8">
+						<img alt="200x200" src="img/mune/11008.png" style="height: 150px;"/>
+						<div class="caption" style="text-align: center; font-weight: bold;">
+							<p>
+								火腿三明治 
+							</p>
+							<p>
+								<font color="#C12E2A" size="3">15.0元</font>
+							</p>
+							<p>
+								 <a class="btn btn-success" href="#">加入购物车</a> <a class="btn" href="#">查看评价</a>
+							</p>
+						</div>
+					</div>
+					
+					<div class="modal fade" id="myModa8" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" 
+									aria-hidden="true">×
+								</button>
+								<div style="float: left;">
+									<img src="img/mune/11008.png" width="300px"/>
+								</div>
+								<h3 class="modal-title" id="myModalLabel" style="padding-top: 40px;">
+									火腿三明治 
+								</h3>
+								<h6 style="color: #9D9D9D;"></h6>
+								<div class="modal-body">
+								套餐包括：芝士火腿三明治 
+								</div>
+								<font color="red"size="4">15.0元</font>
+							</div>
+
+							<div class="modal-footer" >
+								<form action="goShopping?menuid=11008&menu=menu3" method="post">
+									<font style="float: left;font-size: 20px">数量：</font>
+									<div class="input-group" style="float: left;width: 120px">
+										<span class="input-group-btn">
+											<button class="btn btn-default" type="button" onclick="red1()">
+												-
+											</button>
+										</span>
+										<input type="text" class="form-control" value="1" name="amounts">
+										<span class="input-group-btn">
+											<button class="btn btn-default" type="button" onclick="add1()">
+												+
+											</button>
+										</span>
+									</div>
+									<button type="button" class="btn btn-default"
+											data-dismiss="modal">关闭
+									</button>
+									<a href="#">
+										<button type="submit" class="btn btn-primary" onclick="shopping()">
+											加入购物车
+										</button>
+									</a>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+				</div>
+				
+				
+			</div>
+		</div>
+	</div>
+</div>
+<SCRIPT>
+    function shopping() {
+        alert("以成功加入购物车\n请在会员中心查看");
+    }
+    function add1() {
+        var a = $(".form-control").val();
+        var b = parseInt(a)+1;
+        $(".form-control").val(b);
+    }
+    function red1() {
+        var a = $(".form-control").val();
+        if(parseInt(a)) {
+            var b = parseInt(a) - 1;
+            $(".form-control").val(b);
+        }
+    }
+</SCRIPT>
+	</body>
+</html>

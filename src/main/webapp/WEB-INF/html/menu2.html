@@ -1,0 +1,524 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+     	 <link href="css/bootstrap.css" rel="stylesheet">      
+         <script src="js/jquery.js"></script>
+         <script type="text/javascript" src="js/bootstrap.min.js" ></script>
+		<title></title>
+		<style>
+			.thumbnail:hover{
+				box-shadow: 5px 5px 10px #888888,-5px 0px 10px #888888;
+				transform: scale(0.9);
+				}
+		</style>
+	</head>
+	<body>
+<div class="container-fluid">
+	<div class="row-fluid">
+		<div class="span12">
+			<div class="row-fluid">
+				<div class="col-xs-3 span3">
+					<div class="thumbnail" data-toggle="modal" data-target="#myModal">
+						<img alt="200x200" src="img/mune/15001.png" style="height: 150px;"/>
+						<div class="caption" style="text-align: center; font-weight: bold;">
+							<p>
+								薯角培根比萨 (薄底)
+							</p>
+							<h6 style="color: #9D9D9D;">新品</h6>
+							<p>
+								<font color="#C12E2A" size="3">59.0元</font><font color="#888888" size="1">/10英寸</font>
+							</p>
+							<p>
+								 <a class="btn btn-success" href="#">加入购物车</a> <a class="btn" href="#">查看评价</a>
+							</p>
+						</div>
+					</div>
+					
+					<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" 
+									aria-hidden="true">×
+								</button>
+								<div style="float: left;">
+									<img src="img/mune/15001.png" width="300px"/>
+								</div>
+								<h3 class="modal-title" id="myModalLabel" style="padding-top: 80px;">
+									薯角培根比萨 (薄底)
+								</h3>
+								<h6 style="color: #9D9D9D;">新品</h6>
+								<div class="modal-body">
+								选自吸收满满阳光的美国进口薯角，佐以口味适中的鸡蛋沙拉酱 <br>
+								主要原料:面团、鸡蛋沙拉酱、进口莫扎里拉芝士、进口薯角、培根。
+								</div>
+								<font color="red"size="4">59.0元/10英寸</font>
+							</div>
+
+							<div class="modal-footer" >
+								<form action="goShopping?menuid=15001&menu=menu2" method="post">
+									<font style="float: left;font-size: 20px">数量：</font>
+									<div class="input-group" style="float: left;width: 120px">
+										<span class="input-group-btn">
+											<button class="btn btn-default" type="button" onclick="red1()">
+												-
+											</button>
+										</span>
+										<input type="text" class="form-control" value="1" name="amounts">
+										<span class="input-group-btn">
+											<button class="btn btn-default" type="button" onclick="add1()">
+												+
+											</button>
+										</span>
+									</div>
+									<button type="button" class="btn btn-default"
+											data-dismiss="modal">关闭
+									</button>
+									<a href="#">
+										<button type="submit" class="btn btn-primary" onclick="shopping()">
+											加入购物车
+										</button>
+									</a>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+				</div>
+				<div class="col-xs-3 span3">
+					<div class="thumbnail" data-toggle="modal" data-target="#myModa2">
+						<img alt="200x200" src="img/mune/15002.png" style="height: 150px;"/>
+						<div class="caption" style="text-align: center; font-weight: bold;">
+							<p>
+								黄金风光比萨 (薄底)
+							</p>
+							<h6 style="color: #9D9D9D;">新品</h6>
+							<p>
+								<font color="#C12E2A" size="3">66.0元</font><font color="#888888" size="1">/10英寸</font>
+							</p>
+							<p>
+								 <a class="btn btn-success" href="#">加入购物车</a> <a class="btn" href="#">查看评价</a>
+							</p>
+						</div>
+					</div>
+					
+					<div class="modal fade" id="myModa2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" 
+									aria-hidden="true">×
+								</button>
+								<div style="float: left;">
+									<img src="img/mune/15002.png" width="300px"/>
+								</div>
+								<h3 class="modal-title" id="myModalLabel" style="padding-top: 80px;">
+									黄金风光比萨 (薄底)
+								</h3>
+								<h6 style="color: #9D9D9D;">新品</h6>
+								<div class="modal-body">
+								火腿片、圆片菠萝、樱桃番茄、芝士<br />
+								主要原料:面团、芝士、菠萝、火腿、樱桃番茄 
+								</div>
+								<font color="red"size="4">66.0元/10英寸</font>
+							</div>
+
+							<div class="modal-footer" >
+								<form action="goShopping?menuid=15002&menu=menu2" method="post">
+									<font style="float: left;font-size: 20px">数量：</font>
+									<div class="input-group" style="float: left;width: 120px">
+										<span class="input-group-btn">
+											<button class="btn btn-default" type="button" onclick="red1()">
+												-
+											</button>
+										</span>
+										<input type="text" class="form-control" value="1" name="amounts">
+										<span class="input-group-btn">
+											<button class="btn btn-default" type="button" onclick="add1()">
+												+
+											</button>
+										</span>
+									</div>
+									<button type="button" class="btn btn-default"
+											data-dismiss="modal">关闭
+									</button>
+									<a href="#">
+										<button type="submit" class="btn btn-primary" onclick="shopping()">
+											加入购物车
+										</button>
+									</a>
+								</form>
+							</div>
+						</div>
+					</div>
+					</div>
+				</div>
+				<div class="col-xs-3 span3">
+					<div class="thumbnail" data-toggle="modal" data-target="#myModa3">
+						<img alt="200x200" src="img/mune/15003.png" style="height: 150px;"/>
+						<div class="caption" style="text-align: center; font-weight: bold;">
+							<p>
+								美式精选比萨 (薄底)
+							</p>
+							<h6 style="color: #9D9D9D;">新品</h6>
+							<p>
+								<font color="#C12E2A" size="3">68.0元</font><font color="#888888" size="1">/10英寸</font>
+							</p>
+							<p>
+								 <a class="btn btn-success" href="#">加入购物车</a> <a class="btn" href="#">查看评价</a>
+							</p>
+						</div>
+					</div>
+					
+					<div class="modal fade" id="myModa3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" 
+									aria-hidden="true">×
+								</button>
+								<div style="float: left;">
+									<img src="img/mune/15003.png" width="300px"/>
+								</div>
+								<h3 class="modal-title" id="myModalLabel" style="padding-top: 80px;">
+									美式精选比萨 (薄底)
+								</h3>
+								<h6 style="color: #9D9D9D;">新品</h6>
+								<div class="modal-body">
+								腊肉肠、莫扎里拉芝士。<br />
+								主要原料:面团、芝士、腊肉肠 
+								</div>
+								<font color="red"size="4">68.0元/10英寸</font>
+							</div>
+
+							<div class="modal-footer" >
+								<form action="goShopping?menuid=15003&menu=menu2" method="post">
+									<font style="float: left;font-size: 20px">数量：</font>
+									<div class="input-group" style="float: left;width: 120px">
+										<span class="input-group-btn">
+											<button class="btn btn-default" type="button" onclick="red1()">
+												-
+											</button>
+										</span>
+										<input type="text" class="form-control" value="1" name="amounts">
+										<span class="input-group-btn">
+											<button class="btn btn-default" type="button" onclick="add1()">
+												+
+											</button>
+										</span>
+									</div>
+									<button type="button" class="btn btn-default"
+											data-dismiss="modal">关闭
+									</button>
+									<a href="#">
+										<button type="submit" class="btn btn-primary" onclick="shopping()">
+											加入购物车
+										</button>
+									</a>
+								</form>
+							</div>
+						</div>
+					</div>
+					</div>
+				</div>
+				<div class="col-xs-3 span3">
+					<div class="thumbnail" data-toggle="modal" data-target="#myModa4">
+						<img alt="200x200" src="img/mune/15004.png" style="height: 150px;"/>
+						<div class="caption" style="text-align: center; font-weight: bold;">
+							<p>
+								超级至尊比萨 (薄底)
+							</p>
+							<h6 style="color: #9D9D9D;">新品</h6>
+							<p>
+								<font color="#C12E2A" size="3">76.0元</font><font color="#888888" size="1">/10英寸</font>
+							</p>
+							<p>
+								 <a class="btn btn-success" href="#">加入购物车</a> <a class="btn" href="#">查看评价</a>
+							</p>
+						</div>
+					</div>
+					
+					<div class="modal fade" id="myModa4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" 
+									aria-hidden="true">×
+								</button>
+								<div style="float: left;">
+									<img src="img/mune/15004.png" width="300px"/>
+								</div>
+								<h3 class="modal-title" id="myModalLabel" style="padding-top: 80px;">
+									超级至尊比萨 (薄底)
+								</h3>
+								<h6 style="color: #9D9D9D;">新品</h6>
+								<div class="modal-body">
+								腊肉肠、香肠、火腿、牛肉，搭配菠萝、蘑菇、洋葱、青椒等蔬菜水果，如此丰盛馅料，口口都是令人满足的好滋味。<br />
+								主要原料:面团、牛肉粒、猪肉粒、火腿、腊肉肠、芝士、蔬菜、菠萝、黑橄榄。 
+								</div>
+								<font color="red"size="4">76.0元/10英寸</font>
+							</div>
+
+							<div class="modal-footer" >
+								<form action="goShopping?menuid=15004&menu=menu2" method="post">
+									<font style="float: left;font-size: 20px">数量：</font>
+									<div class="input-group" style="float: left;width: 120px">
+										<span class="input-group-btn">
+											<button class="btn btn-default" type="button" onclick="red1()">
+												-
+											</button>
+										</span>
+										<input type="text" class="form-control" value="1" name="amounts">
+										<span class="input-group-btn">
+											<button class="btn btn-default" type="button" onclick="add1()">
+												+
+											</button>
+										</span>
+									</div>
+									<button type="button" class="btn btn-default"
+											data-dismiss="modal">关闭
+									</button>
+									<a href="#">
+										<button type="submit" class="btn btn-primary" onclick="shopping()">
+											加入购物车
+										</button>
+									</a>
+								</form>
+							</div>
+						</div>
+					</div>
+					</div>
+				</div>
+				
+				<div class="col-xs-3 span3">
+					<div class="thumbnail" data-toggle="modal" data-target="#myModa5">
+						<img alt="200x200" src="img/mune/15005.png" style="height: 150px;"/>
+						<div class="caption" style="text-align: center; font-weight: bold;">
+							<p>
+								北京潮鸭比萨 (薄底) 
+							</p>
+							<h6 style="color: #9D9D9D;">新品</h6>
+							<p>
+								<font color="#C12E2A" size="3">76.0元</font><font color="#888888" size="1">/10英寸</font>
+							</p>
+							<p>
+								 <a class="btn btn-success" href="#">加入购物车</a> <a class="btn" href="#">查看评价</a>
+							</p>
+						</div>
+					</div>
+					
+					<div class="modal fade" id="myModa5" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" 
+									aria-hidden="true">×
+								</button>
+								<div style="float: left;">
+									<img src="img/mune/15005.png" width="300px"/>
+								</div>
+								<h3 class="modal-title" id="myModalLabel" style="padding-top: 80px;">
+									北京潮鸭比萨 (薄底) 
+								</h3>
+								<h6 style="color: #9D9D9D;">新品</h6>
+								<div class="modal-body">
+								特选鲜嫩的喷香鸭肉，搭配京味酱，再配以黄瓜、京葱等传统辅料，大胆将中式经典风味与西方经典美食比萨融合。<br />
+								主要原料:面团、芝士、鸭肉、蔬菜
+								</div>
+								<font color="red"size="4">76.0元/10英寸</font>
+							</div>
+
+							<div class="modal-footer" >
+								<form action="goShopping?menuid=15005&menu=menu2" method="post">
+									<font style="float: left;font-size: 20px">数量：</font>
+									<div class="input-group" style="float: left;width: 120px">
+										<span class="input-group-btn">
+											<button class="btn btn-default" type="button" onclick="red1()">
+												-
+											</button>
+										</span>
+										<input type="text" class="form-control" value="1" name="amounts">
+										<span class="input-group-btn">
+											<button class="btn btn-default" type="button" onclick="add1()">
+												+
+											</button>
+										</span>
+									</div>
+									<button type="button" class="btn btn-default"
+											data-dismiss="modal">关闭
+									</button>
+									<a href="#">
+										<button type="submit" class="btn btn-primary" onclick="shopping()">
+											加入购物车
+										</button>
+									</a>
+								</form>
+							</div>
+						</div>
+					</div>
+					</div>
+				</div>
+				
+				<div class="col-xs-3 span3">
+					<div class="thumbnail" data-toggle="modal" data-target="#myModa6">
+						<img alt="200x200" src="img/mune/15006.png" style="height: 150px;"/>
+						<div class="caption" style="text-align: center; font-weight: bold;">
+							<p>
+								海鲜至尊比萨 (薄底)
+							</p>
+							<h6 style="color: #9D9D9D;">新品</h6>
+							<p>
+								<font color="#C12E2A" size="3">80.0元</font><font color="#888888" size="1">/10英寸</font>
+							</p>
+							<p>
+								 <a class="btn btn-success" href="#">加入购物车</a> <a class="btn" href="#">查看评价</a>
+							</p>
+						</div>
+					</div>
+					
+					<div class="modal fade" id="myModa6" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" 
+									aria-hidden="true">×
+								</button>
+								<div style="float: left;">
+									<img src="img/mune/15006.png" width="300px"/>
+								</div>
+								<h3 class="modal-title" id="myModalLabel" style="padding-top: 80px;">
+									海鲜至尊比萨 (薄底) 
+								</h3>
+								<h6 style="color: #9D9D9D;">新品</h6>
+								<div class="modal-body">
+								精心搭配多种海鲜食材，鲜嫩弹牙，带来新鲜的海洋味道。<br />
+								主要原料:面团、芝士、虾仁、鱿鱼、菠萝、荷兰芹. 
+								</div>
+								<font color="red"size="4">80.0元/10英寸</font>
+							</div>
+
+							<div class="modal-footer" >
+								<form action="goShopping?menuid=15006&menu=menu2" method="post">
+									<font style="float: left;font-size: 20px">数量：</font>
+									<div class="input-group" style="float: left;width: 120px">
+										<span class="input-group-btn">
+											<button class="btn btn-default" type="button" onclick="red1()">
+												-
+											</button>
+										</span>
+										<input type="text" class="form-control" value="1" name="amounts">
+										<span class="input-group-btn">
+											<button class="btn btn-default" type="button" onclick="add1()">
+												+
+											</button>
+										</span>
+									</div>
+									<button type="button" class="btn btn-default"
+											data-dismiss="modal">关闭
+									</button>
+									<a href="#">
+										<button type="submit" class="btn btn-primary" onclick="shopping()">
+											加入购物车
+										</button>
+									</a>
+								</form>
+							</div>
+						</div>
+					</div>
+					</div>
+				</div>
+				
+				<div class="col-xs-3 span3">
+					<div class="thumbnail" data-toggle="modal" data-target="#myModa7">
+						<img alt="200x200" src="img/mune/15007.png" style="height: 150px;"/>
+						<div class="caption" style="text-align: center; font-weight: bold;">
+							<p>
+								榴莲多多比萨 (薄底)
+							</p>
+							<h6 style="color: #9D9D9D;">招牌</h6>
+							<p>
+								<font color="#C12E2A" size="3">86.0元</font><font color="#888888" size="1">/10英寸</font>
+							</p>
+							<p>
+								 <a class="btn btn-success" href="#">加入购物车</a> <a class="btn" href="#">查看评价</a>
+							</p>
+						</div>
+					</div>
+					
+					<div class="modal fade" id="myModa7" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" 
+									aria-hidden="true">×
+								</button>
+								<div style="float: left;">
+									<img src="img/mune/15007.png" width="300px"/>
+								</div>
+								<h3 class="modal-title" id="myModalLabel" style="padding-top: 80px;">
+									榴莲多多比萨 (薄底) 
+								</h3>
+								<h6 style="color: #9D9D9D;">招牌</h6>
+								<div class="modal-body">
+								香气扑鼻，口味浓郁，让爱榴莲的你无法抗拒。<br>
+								主要原料:面团、金枕榴莲、芝士
+								</div>
+								<font color="red"size="4">86.0元/10英寸</font>
+							</div>
+
+							<div class="modal-footer" >
+								<form action="goShopping?menuid=15007&menu=menu2" method="post">
+									<font style="float: left;font-size: 20px">数量：</font>
+									<div class="input-group" style="float: left;width: 120px">
+										<span class="input-group-btn">
+											<button class="btn btn-default" type="button" onclick="red1()">
+												-
+											</button>
+										</span>
+										<input type="text" class="form-control" value="1" name="amounts">
+										<span class="input-group-btn">
+											<button class="btn btn-default" type="button" onclick="add1()">
+												+
+											</button>
+										</span>
+									</div>
+									<button type="button" class="btn btn-default"
+											data-dismiss="modal">关闭
+									</button>
+									<a href="#">
+										<button type="submit" class="btn btn-primary" onclick="shopping()">
+											加入购物车
+										</button>
+									</a>
+								</form>
+							</div>
+						</div>
+					</div>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+</div>
+	<SCRIPT>
+        function shopping() {
+            alert("以成功加入购物车\n请在会员中心查看");
+        }
+        function add1() {
+            var a = $(".form-control").val();
+            var b = parseInt(a)+1;
+            $(".form-control").val(b);
+        }
+        function red1() {
+            var a = $(".form-control").val();
+            if(parseInt(a)) {
+                var b = parseInt(a) - 1;
+                $(".form-control").val(b);
+            }
+        }
+	</SCRIPT>
+	</body>
+</html>
