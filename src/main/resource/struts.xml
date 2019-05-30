@@ -28,6 +28,10 @@
         <action name="deleteAction" class="cn.deleteAction">
             <result>WEB-INF/html/goods.html</result>
         </action>
+
+        <action name="evaluateAction" class="cn.evaluateAction">
+            <result>WEB-INF/html/evaluate.html</result>
+        </action>
         
         <action name="goShopping" class="cn.goShopping">
             <result name="menu1">WEB-INF/html/menu1.html</result>
