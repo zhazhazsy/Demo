@@ -10,25 +10,34 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class test extends ActionSupport {
+    private String name;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public static String sql = "";
     public String execute() throws SQLException {
-        System.out.println("------------------------------");
-        System.out.println("-66666666666666666666666666666666");
         ResultSet rst = null;
-        ValueStack vs = ActionContext.getContext().getValueStack();
+        Map<String, Object> sission = ActionContext.getContext().getSession();
         List<mune> list = new ArrayList<mune>();
-        sql = "SELECT * FROM mune";
+        sql = "SELECT * FROM mune where MenuName like '%"+name+"%' limit 0,5";
         try {
              rst = dbBean.executeQuery(sql);
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        while (rst.next()) {
-            list.add(new mune(rst.getString("MuneId"),rst.getString("MenuName"),"1","1"));
-        }
-        vs.set("list", list);
-        return "success";
+            while (rst.next()) {
+                list.add(new mune(rst.getString("MuneId"), rst.getString("MenuName"), rst.getString("Price"), "1"));
+            }
+        sission.put("list", list);
+        return SUCCESS;
     }
 }

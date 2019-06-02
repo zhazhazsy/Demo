@@ -7,6 +7,15 @@
 <struts>
     <package name="success" namespace="/" extends="struts-default">
 
+        <interceptors>
+            <interceptor name="login" class="interceptor.LoginInterceptor"/>
+        </interceptors>
+        
+
+        <global-results>
+            <result name="loginE">/index.jsp</result>
+        </global-results>
+        
         <action name="gologin" class="cn.loginAction">
             <result name="loginSuccess">/WEB-INF/html/Root.html</result>
             <result name="loginError" type="redirect">/login.html?key=2</result>
@@ -18,31 +27,45 @@
         </action>
         
         <action name="updateAdd" class="cn.updateAdd">
+            <interceptor-ref name="defaultStack"/>
+            <interceptor-ref name="login"/>
             <result name="success">/WEB-INF/html/MyAddress.html</result>
         </action>
 
         <action name="goGoods" class="cn.goodsAction">
+            <interceptor-ref name="defaultStack"/>
+            <interceptor-ref name="login"/>
+            <result name="Fal">WEB-INF/html/balance.html?yue=0</result>
             <result name ="goGoods">WEB-INF/html/goods.html</result >
         </action>
 
         <action name="deleteAction" class="cn.deleteAction">
+            <interceptor-ref name="defaultStack"/>
+            <interceptor-ref name="login"/>
             <result>WEB-INF/html/goods.html</result>
         </action>
 
         <action name="evaluateAction" class="cn.evaluateAction">
+            <interceptor-ref name="defaultStack"/>
+            <interceptor-ref name="login"/>
             <result>WEB-INF/html/evaluate.html</result>
         </action>
         
         <action name="goShopping" class="cn.goShopping">
+            <interceptor-ref name="defaultStack"/>
+            <interceptor-ref name="login"/>
             <result name="menu1">WEB-INF/html/menu1.html</result>
             <result name="menu2">WEB-INF/html/menu2.html</result>
             <result name="menu3">WEB-INF/html/menu3.html</result>
             <result name="menu4">WEB-INF/html/menu4.html</result>
             <result name="menu5">WEB-INF/html/menu5.html</result>
             <result name="menu6">WEB-INF/html/menu6.html</result>
+            <result name="menu7" type= "redirectAction">dispatcher_goUser</result>
         </action>
 
         <action name ="dispatcher_*" class ="cn.Jump" method="{1}" >
+            <interceptor-ref name="defaultStack"/>
+            <interceptor-ref name="login"/>
             <result name ="goMenu1">WEB-INF/html/menu1.html</result >
             <result name ="goMenu2">WEB-INF/html/menu2.html</result >
             <result name ="goMenu3">WEB-INF/html/menu3.html</result >
@@ -54,9 +77,18 @@
             <result name ="goRoot">WEB-INF/html/Root.html</result >
             <result name ="goBalance">WEB-INF/html/balance.html</result >
             <result name ="goRecharge">WEB-INF/html/balance.html</result >
+            <result name ="goUser">WEB-INF/html/user.html</result >
         </action >
+        <action name="logoutAction" class="cn.logoutAction">
+            <result type="redirect">/index.jsp?logout=1</result>
+        </action>
+        <action name="evaAction" class="cn.evaAction">
+            <interceptor-ref name="defaultStack"/>
+            <interceptor-ref name="login"/>
+            <result type= "redirectAction" name="success">dispatcher_goUser</result>
+        </action>
         <action name="test" class="test.test">
-            <result name="success">html/yz.jsp</result>
+            <result>/html/yz.jsp</result>
         </action>
     </package>
 </struts>

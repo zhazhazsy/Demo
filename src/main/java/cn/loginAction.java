@@ -11,6 +11,7 @@ public class loginAction extends ActionSupport implements ModelDriven<user> {
 	private user user = new user();
 	ActionContext ax =  ActionContext.getContext();
 	Map<String,Object> application = ax.getApplication();
+	Map<String, Object> session = ax.getSession();
 
 	public user getModel() {
 		return user;
@@ -21,6 +22,7 @@ public class loginAction extends ActionSupport implements ModelDriven<user> {
 		result = goLogin.testQueryByID(user.getId(),user.getPwd());
 		if(result!=null){
 			application.put("myid",result);
+			session.put("myid",result);
 			return "loginSuccess";
 		}else{
 			return "loginError";

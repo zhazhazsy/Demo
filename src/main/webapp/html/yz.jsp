@@ -1,5 +1,4 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql" %>
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
     String path = request.getContextPath();
@@ -12,20 +11,43 @@
     <base href="<%=basePath%>">
 
     <title>MyJSP</title>
+    <style>
+        .chao{
+            background-color: #FFFFFF;
+            width: 280px;
+            height:60px;
+            border-radius: 20px;
+            border-style: solid;
+            margin-top: 2px;
+        }
+        .chao:hover{
+            background-color: #d4d4d4;
+        }
+    </style>
 
 </head>
 
 <body>
-<sql:setDataSource var="dbs" driver="com.mysql.jdbc.Driver"
-                   url="jdbc:mysql://localhost/webroot"
-                   user="root"  password="123" />
-<sql:query dataSource="${dbs}" var="db">
-    select*from buy;
-</sql:query>
-${db.id}
-66666666666666666
-
-
-
+<s:iterator value="#session.list">
+    <a href="evaluateAction?id=<s:property value="muneid"/>">
+    <div class="chao">
+        <div style="float:left;width: 30%;">
+            <img width="50px" style="margin-left: 20px;margin-top: 2px;" src="img/mune/<s:property value="muneid"/>.png">
+        </div>
+        <div style="float: left;width: 69%;margin-top: 5px;">
+            <font style="font-weight: bold;">
+                 <s:property value="munename"/>
+            </font>
+                <br>
+            <font color="red" style="font-weight: bold;">
+                <s:property value="price"/>
+            </font>
+            <font size="1" color="#696969">
+                元
+            </font>
+        </div>
+    </div>
+    </a>
+</s:iterator>
 </body>
 </html>

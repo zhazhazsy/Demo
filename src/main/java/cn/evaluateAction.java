@@ -29,6 +29,7 @@ public class evaluateAction extends ActionSupport {
         ValueStack vs = ax.getValueStack();
         ResultSet rs = null;
         ResultSet rst = null;
+        /*查询该商品*/
         sql = "select * from mune where MuneId = '"+id+"'";
         try {
             rs = dbBean.executeQuery(sql);
@@ -40,7 +41,8 @@ public class evaluateAction extends ActionSupport {
             ax.getSession().put("munename",rs.getString("MenuName"));
             ax.getSession().put("price",rs.getString("Price"));
         }
-        sql = "select * from buy where muneid = '"+id+"'";
+        /*查询该商品所有购买信息和评价*/
+        sql = "select * from buy,`user` where state = 4 and `user`.id=buy.id and muneid = '"+id+"'";
         try {
             rst = dbBean.executeQuery(sql);
         } catch (SQLException e) {
@@ -48,10 +50,8 @@ public class evaluateAction extends ActionSupport {
         }
         List<evaluate> list = new ArrayList<evaluate>();
         if(rst!=null){
-            String []add = {"img/tou/tou1.jpg","img/tou/tou2.jpg","img/tou/tou3.jpg","img/tou/tou4.jpg","img/tou/tou5.jpg","img/tou/tou6.jpg","img/tou/tou7.jpg","img/tou/tou8.jpg","img/tou/tou9.jpg","img/tou/tou10.jpg"};
-            while (rst.next()){
-                int a = (int)(Math.random()*(10-1+1));
-                list.add(new evaluate(rst.getString("id"),rst.getString("message"),add[a]));
+                while (rst.next()){
+                list.add(new evaluate(rst.getString("id"),rst.getString("message"),rst.getString("tou")));
             }
         }
         ax.getSession().put("list",list);

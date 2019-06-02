@@ -55,10 +55,13 @@ public class goodsAction extends ActionSupport {
             //key不为空则是处理下单
         if (key!=null){
             //对值栈余额进行更新
+            if(mymoney - (Integer.parseInt(prices)*Integer.parseInt(am))<0) {
+                return "Fal";
+            }
             int newmoney = mymoney - (Integer.parseInt(prices)*Integer.parseInt(am));
             application.put("balance",String.valueOf(newmoney));
             //先将该状态改为已经下单（2）
-            sqlt = "update buy set state = 2 where muneid = '"+key+"' and id = '"+id+"'";
+            sqlt = "update buy set state = 2 where state = 1 and muneid = '"+key+"' and id = '"+id+"'";
             //对数据库余额进行扣除
             sqly = "update user set balance = '"+newmoney+"' where id = '"+id+"'";
             try {

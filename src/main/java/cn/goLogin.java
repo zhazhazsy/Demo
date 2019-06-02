@@ -11,6 +11,7 @@ public class goLogin {
     public static String sql="";
     public  static String testQueryByID(String ID,String pwd){
         ActionContext ax =  ActionContext.getContext();
+        Map<String, Object> session = ax.getSession();
         Map<String,Object> application = ax.getApplication();
         ResultSet rs = null;
         String result = null;
@@ -23,6 +24,7 @@ public class goLogin {
         try {
             if(rs!=null){
                 while(rs.next()){
+                    session.put("touxiang",rs.getString("tou"));
                     application.put("add",rs.getString("add"));
                     application.put("balance",rs.getString("balance"));
                     application.put("name",rs.getString("name"));

@@ -64,9 +64,54 @@
     	#up2-2{
     		display: none;
     	}
-    	input[type="text"]:focus{
+    	/*input[type="text"]:focus{
 		  border:1px solid #ff7496;
-		}
+		}*/
+			/*搜索框*/
+			div.search {padding: 10px 0;}
+
+			form {
+				position: relative;
+				width: 300px;
+				margin: 0 auto;
+			}
+
+			input {
+				border: none;
+				outline: none;
+			}
+
+			input {
+				width: 100%;
+				height: 42px;
+				padding-left: 13px;
+			}
+
+
+
+			/*搜索框7*/
+			.bar7 form {
+				height: 42px;
+			}
+			.bar7 input {
+				width: 250px;
+				border-radius: 42px;
+				border: 2px solid #324B4E;
+				background: #FFFFFF;
+				transition: .3s linear;
+				float: right;
+			}
+			.bar7 input:focus {
+				width: 300px;
+			}
+			#myDiv{
+				width: 280px;
+				position: fixed;
+				left: 48%;
+				top: 58px;
+				z-index:9999;
+				opacity:0.90;
+			}
 	    </style>
 	</head>
 	<body>
@@ -80,10 +125,16 @@
 				<a href="dispatcher_goMymessage"><div class="a1" style="width: 49%;height: 69px;float: right;">会员中心</div></a>
 			</div>
 			<div id="nav4" style="height: 69px; width: 30%; float: left;">
+				<div class="search bar7">
+					<form>
+						<input id="txt" placeholder="请输入您要搜索的内容...">
+					</form>
+				</div>
 			</div>
 			<a href="#"><div id="nav5" >立即点餐</div></a>
 			<div id="nav6" style="width: 19%; height: 69px;"></div>
     	</div>
+		<div id="myDiv" style="background-color: #FFFFFF"></div>
 <div class="container" style="background-color: #FFFFFF;">
 	<div class="row clearfix">
 		<div class="col-md-2 column">
@@ -266,4 +317,42 @@
 
 
 	</body>
+<script>
+    if(/msie/i.test(navigator.userAgent)) //ie浏览器
+    {
+        document.getElementById('txt').onpropertychange = loadXMLDoc;
+    }
+    else
+    {//非ie浏览器
+        document.getElementById('txt').addEventListener("input", loadXMLDoc, false);
+        document.getElementById('txt').watch('a', fn);
+
+    }
+    function loadXMLDoc()
+    {
+        var name=document.getElementById('txt').value;
+        var xmlhttp;
+        if (window.XMLHttpRequest)
+        {// code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp=new XMLHttpRequest();
+        }
+        else{   // code for IE6, IE5
+            xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange=function()
+        {
+            if (xmlhttp.readyState==4 && xmlhttp.status==200)
+            {
+                if(name!="") {
+                    document.getElementById("myDiv").innerHTML = xmlhttp.responseText;
+                }else{
+                    document.getElementById("myDiv").innerHTML="";
+                }
+            }
+        }
+
+        xmlhttp.open("GET","test?name="+name,true);
+        xmlhttp.send();
+    }
+</script>
 </html>

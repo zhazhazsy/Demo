@@ -323,8 +323,8 @@
 								</div>
 								<font color="red"size="4">91.0元/10英寸</font>
 							</div>
-						
-						<div class="modal-footer" >
+
+							<div class="modal-footer" >
 								<form action="goShopping?menuid=10005&menu=menu1" method="post">
 									<font style="float: left;font-size: 20px">数量：</font>
 									<div class="input-group" style="float: left;width: 120px">
@@ -333,22 +333,23 @@
 												-
 											</button>
 										</span>
-											<input type="text" class="form-control" value="1" name="amounts">
+										<input type="text" class="form-control" value="1" name="amounts">
 										<span class="input-group-btn">
 											<button class="btn btn-default" type="button" onclick="add1()">
 												+
 											</button>
 										</span>
 									</div>
-							<button type="button" class="btn btn-default" 
-								data-dismiss="modal">关闭
-							</button>
-                            <a href="#">
-                                <button type="submit" class="btn btn-primary" onclick="shopping()">
-									加入购物车
-								</button>
-							</a>
-						</div>
+									<button type="button" class="btn btn-default"
+											data-dismiss="modal">关闭
+									</button>
+									<a href="#">
+										<button type="submit" class="btn btn-primary" onclick="shopping()">
+											加入购物车
+										</button>
+									</a>
+								</form>
+							</div>
 					</div>
 				</div>
 				</div>
@@ -1434,11 +1435,11 @@
     }
 	$("#down").click(function (){
 		if($("#k1").is(":visible")){
-			$("#k1").hide("normal",function(){
+			$("#k1").hide(0,function(){
 				$("#k2").show("normal");
 			});
 		}else if($("#k2").is(":visible")){
-			$("#k2").hide("normal",function(){
+			$("#k2").hide(0,function(){
 				$("#k3").show("normal");
 			});
 		}else{
@@ -1447,11 +1448,11 @@
 	})
 	$("#up").click(function (){
 		if($("#k3").is(":visible")){
-			$("#k3").hide("normal",function(){
+			$("#k3").hide(0,function(){
 				$("#k2").show("normal");
 			});
 		}else if($("#k2").is(":visible")){
-			$("#k2").hide("normal",function(){
+			$("#k2").hide(0,function(){
 				$("#k1").show("normal");
 			});
 		}else{

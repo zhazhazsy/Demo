@@ -3,8 +3,13 @@ package cn;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import dao.dbBean;
+import user.mune;
+import user.person;
 
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 public class Jump extends ActionSupport {
@@ -60,5 +65,33 @@ public class Jump extends ActionSupport {
     }
     public String goGoods(){
         return "goGoods";
+    }
+    public String goUser() throws SQLException{
+        ResultSet rs = null;
+        String id = (String) application.get("myid");
+        sql="SELECT * FROM buy,mune,`user` WHERE `user`.`id` = buy.id AND mune.MuneId = buy.muneid AND buy.`id` = '"+id+"'";
+        Map<String, Object> session = ax.getSession();
+        try {
+            rs = dbBean.executeQuery(sql);
+            } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        List<mune> list = new ArrayList<mune>();
+        while (rs.next()){
+            String price = rs.getString("price")+"元X"+rs.getString("amount")+"份";
+            String state = null;
+            if(Integer.parseInt(rs.getString("state"))==1){
+                state = "尚未付款";
+            }else if(Integer.parseInt(rs.getString("state"))==2){
+                state = "待收货";
+            }else if(Integer.parseInt(rs.getString("state"))==4){
+                state = "以确认收货";
+            }else {
+                state = "666";
+            }
+            list.add(new mune(rs.getString("muneid"),rs.getString("MenuName"),price,state));
+        }
+        session.put("list",list);
+        return "goUser";
     }
 }
