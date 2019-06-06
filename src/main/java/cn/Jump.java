@@ -85,7 +85,7 @@ public class Jump extends ActionSupport {
             }else if(Integer.parseInt(rs.getString("state"))==2){
                 state = "待收货";
             }else if(Integer.parseInt(rs.getString("state"))==4){
-                state = "以确认收货";
+                state = "已确认收货";
             }else {
                 state = "666";
             }

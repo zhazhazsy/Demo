@@ -6318,11 +6318,14 @@ button.close {
   left: 100%;
 }
 .carousel-control {
+
+  width: 20px;
   position: absolute;
   top: 30%;  /*被我修改过   原来都为0*/
   bottom: 50%;
   left: 0;
-  width: 15%;
+  /*width: 15%;*/
+
   font-size: 20px;
   color: #fff;
   text-align: center;

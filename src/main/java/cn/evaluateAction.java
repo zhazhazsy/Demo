@@ -24,7 +24,6 @@ public class evaluateAction extends ActionSupport {
     }
     public static String sql="";
     ActionContext ax =  ActionContext.getContext();
-
     public String execute() throws SQLException{
         ValueStack vs = ax.getValueStack();
         ResultSet rs = null;

@@ -1404,7 +1404,7 @@
 			</div>
 		</div>
 	</div>
-	<a class="left carousel-control" href="#carousel-11082" data-slide="prev" id="up"><span class="glyphicon glyphicon-chevron-left"></span></a> <a class="right carousel-control" href="#carousel-11082" data-slide="next" id="down"><span class="glyphicon glyphicon-chevron-right"></span></a>
+	<a class="left carousel-control" href="#carousel-11082" data-slide="prev" id="up" style="width: 40px;"><span class="glyphicon glyphicon-chevron-left"></span></a> <a class="right carousel-control" href="#carousel-11082" data-slide="next" id="down" style="width: 40px;"><span class="glyphicon glyphicon-chevron-right"></span></a>
 </div>
 <!--<input type="button" id="up" value="上页"/>
 <input type="button" id="down" value="下页"/>-->
@@ -1466,7 +1466,7 @@
    }
    function red1() {
        var a = $(".form-control").val();
-       if(parseInt(a)) {
+       if(parseInt(a)>1) {
            var b = parseInt(a) - 1;
            $(".form-control").val(b);
        }
