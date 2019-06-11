@@ -7,10 +7,13 @@
     <link href="css/bootstrap.css" rel="stylesheet">
     <script src="js/jquery.js"></script>
     <script src="https://cdn.staticfile.org/vue/2.4.2/vue.min.js"></script>
+    <script type="text/javascript" src="js/zturn.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js" ></script>
 </head>
 <style>
     body {
+        margin: 0;
+        padding: 0;
         font-family: 'Open Sans', sans-serif;
         background-color:#10729c;
         background-image: -moz-radial-gradient(50% 50%, ellipse cover, #10729c, #000030 100%);
@@ -22,23 +25,309 @@
     header {
         background-color: rgba(0,0,0,0.2);
         position: absolute;
-        height: 40px;
+        height: 80px;
         width: 100%;
         left: 0px;
-        top: 0px;
+        bottom: 20px;
     }
 
     header h1 {
         text-transform: uppercase;
-        margin-left: 20px;
-        line-height: 25px;
+        margin-left: 0px;
+        margin-top: 0px;
+        line-height: 70px;
         font-weight: 600;
+        font-size: 40px;
+        opacity: 0.8;
+        color: #fff;
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    ol,
+    li,
+    ul,
+    p,
+    dl,
+    dt,
+    dd {
+        padding: 0;
+        margin: 0
+    }
+
+    ul,
+    ol,
+    li,
+    dl,
+    dt,
+    dd {
+        text-decoration: none;
+        list-style: none
+    }
+
+    .lf {
+        float: left
+    }
+
+    .rt {
+        float: right
+    }
+
+    .clear {
+        clear: both
+    }
+
+    .ovh {
+        overflow: hidden
+    }
+
+    a {
+        color: #303030;
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: none;
+    }
+
+    input {
+        border: none;
+        outline: none;
+    }
+
+    img {
+        border: none
+    }
+    /*轮播*/
+
+    html,
+    body {
+        width: 100%;
+        height: 100%;
+        font-family: 'Open Sans', sans-serif;
+        background-color:#10729c;
+        background-image: -moz-radial-gradient(50% 50%, ellipse cover, #10729c, #000030 100%);
+        background-image: -webkit-radial-gradient(50% 50%, ellipse cover, #10729c, #000030 100%);
+        background-image: -o-radial-gradient(50% 50%, ellipse cover, #10729c, #000030 100%);
+        background-image: -ms-radial-gradient(50% 50%, ellipse cover, #10729c, #000030 100%);
+        background-image: radial-gradient(50% 50%, ellipse cover, #10729c, #000030 100%);overflow: hidden;
+        overflow:scroll;
+        overflow-x:hidden;
+        overflow-y:hidden;
+    }
+
+    .lb_gl {
+        height: 100%;
+    }
+
+    .container {
+        width: 100%;
+        position: relative;
+        height: 100%;
+    }
+
+    .pictureSlider {
+        height: 100%;
+        transform: rotate(90deg) translateY(25%) translateX(-25%);
+    }
+
+    .poster-list {
+        width: 100%;
+        height: 100%;
+        margin-top: -250px;
+    }
+
+    .poster-item {
+        background: #fff;
+        height: 70%;
+        width: 90%;
+        margin-top: -100px;
+        border-radius: 10px;
+        padding: 45px 23px 20px 23px;
+        transition: all 0.5s;
+        cursor: default;
+        -moz-transition: all 0.5s;
+        cursor: default;
+        -webkit-transition: all 0.5s;
+        cursor: default;
+        -o-transition: all 0.5s;
+        cursor: default;
+        transform: rotate(-90deg);
+        overflow: hidden;
+    }
+
+    .turn_3d {
+        text-align: center;
+        color: #fff;
+        font-weight: 400;
+        font-size: 36px;
+        padding: 28px 0;
+    }
+    .poster-item .say {
+        font-size: 18px;
+        margin-bottom: 5px;
+        padding-left: 10px;
+    }
+
+    .students_star {
+        padding: 10px 10px 0 10px;
+    }
+
+    .cell_list {
+        margin-bottom: 20px;
+        color: #999;
+        font-size: 18px;
+        overflow: hidden;
+    }
+
+    .darks {
+        color: #000;
+        padding-left: 10px;
+    }
+
+    .zwjs {
+        border-top: 1px solid #d0cddb;
+        line-height: 26px;
+        padding-top: 5px;
+        color: #999;
         font-size: 12px;
+        max-height: 84px;
+        overflow: hidden;
+    }
+
+    .for_btn {
+        position: relative;
+        height: 100%;
+        overflow: hidden
+    }
+
+    .in_page {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 40px;
+        height: 40px;
+        margin-left: -20px;
+        margin-top: -20px;
+    }
+
+    .in_page>img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .check_more {
+        width: 180px;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+        color: #fff;
+        background: #bc241d;
+        margin: 0 auto;
+        display: block;
+    }
+    header {
+        background-color: rgba(0,0,0,0.2);
+        position: absolute;
+        height: 80px;
+        width: 100%;
+        left: 0px;
+        bottom: 20px;
+    }
+
+    header h1 {
+        text-transform: uppercase;
+        margin-left: 0px;
+        margin-top: 0px;
+        line-height: 70px;
+        font-weight: 600;
+        font-size: 40px;
         opacity: 0.8;
         color: #fff;
     }
 </style>
+</style>
 <body>
+<div style="height: 700px;width: 100%;margin:0 auto;">
+    <!--轮播-->
+
+    <div class="lb_gl">
+        <div class="container">
+            <div class="pictureSlider poster-main">
+                <ul id="zturn" class="poster-list">
+
+
+                    <li class="poster-item zturn-item">
+                        <div class="for_btn">
+                            <img src="img/a2.jpg" width="100%">
+                        </div>
+
+                    </li>
+
+                    <li class="poster-item zturn-item">
+                        <div class="for_btn">
+                            <img src="img/a3.jpg" width="100%">
+                        </div>
+
+                    </li>
+
+                    <li class="poster-item zturn-item">
+                        <div class="for_btn">
+                            <img src="img/a1.jpg" width="100%">
+                        </div>
+
+                    </li>
+
+                    <li class="poster-item zturn-item">
+                        <div class="for_btn">
+                            <img src="img/a2.jpg" width="100%">
+                        </div>
+
+                    </li>
+                    <li class="poster-item  zturn-item">
+                        <div class="for_btn">
+                            <img src="img/a3.jpg" width="100%">
+                        </div>
+
+                    </li>
+
+                    <li class="poster-item zturn-item">
+                        <div class="for_btn">
+                            <img src="img/a1.jpg" width="100%">
+                        </div>
+
+                    </li>
+
+                    <li class="poster-item zturn-item">
+                        <div class="for_btn">
+                            <img src="img/a2.jpg" width="100%">
+                        </div>
+
+                    </li>
+                    <li class="poster-item  zturn-item">
+                        <div class="for_btn">
+                            <img src="img/a3.jpg" width="100%">
+                        </div>
+
+                    </li>
+                    <li class="poster-item  zturn-item">
+                        <div class="for_btn">
+                            <img src="img/a1.jpg" width="100%">
+                        </div>
+
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+
+    </div>
+
+</div>
 <canvas id='world' width='500' height='500'></canvas>
 <header><h1 style="text-align: center"><a href="login.html">去登陆</a></h1></header>
 
@@ -46,19 +335,28 @@
 </body>
 </html>
 <script>
-    var TWO_PI = Math.PI * 2;
+    /*var TWO_PI = Math.PI * 2;
     var HALF_PI = Math.PI * 0.5;
     var THICKNESS = 12;
     var LENGTH = 10;
     var STEP = 0.1;
-    var FPS = 1000 / 60;
+    var FPS = 1000 / 60;*/
     window.onload = function() {
         var querystr=location.search.substring(1,location.search.length);
         if(querystr=="logout=1"){
             alert("注销成功");
         }
     }
-    function Particle(x, y, mass) {
+    var aa = new zturn({
+        id: "zturn",
+        opacity: 0.9,
+        width: 200,
+        Awidth: 300,
+        scale: 0.9,
+        auto: true, //是否轮播 默认5000
+        turning: 2000 //轮播时长
+    })
+    /*function Particle(x, y, mass) {
 
         this.x = x || 0;
         this.y = y || 0;
@@ -281,5 +579,28 @@
     resize();
 
     init();
-    step();
+    step();*/
+
 </script>
+<%--
+   ┏┓　　　┏┓
+ ┏┛┻━━━┛┻┓
+ ┃　　　　　　　┃
+ ┃　　　━　　　┃
+ ┃　┳┛　┗┳　┃
+ ┃　　　　　　　┃
+ ┃　　　┻　　　┃
+ ┃　　　　　　　┃
+ ┗━┓　　　┏━┛
+     ┃　　　┃
+     ┃　　　┃
+     ┃　　　┗━━━┓
+     ┃　　　　　　　┣┓
+     ┃　　　　　　　┏┛
+     ┗┓┓┏━┳┓┏┛
+       ┃┫┫　┃┫┫
+       ┗┻┛　┗┻┛
+        神兽保佑
+        代码无BUG!
+--%>
+

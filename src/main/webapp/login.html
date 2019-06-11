@@ -9,6 +9,15 @@
          <script type="text/javascript" src="js/bootstrap.min.js" ></script>
 </head>
 	<style type="text/css">
+		body {
+			font-family: 'Open Sans', sans-serif;
+			background-color:#10729c;
+			background-image: -moz-radial-gradient(50% 50%, ellipse cover, #10729c, #000030 100%);
+			background-image: -webkit-radial-gradient(50% 50%, ellipse cover, #10729c, #000030 100%);
+			background-image: -o-radial-gradient(50% 50%, ellipse cover, #10729c, #000030 100%);
+			background-image: -ms-radial-gradient(50% 50%, ellipse cover, #10729c, #000030 100%);
+			background-image: radial-gradient(50% 50%, ellipse cover, #10729c, #000030 100%);overflow: hidden;
+		}
 		.logintxt{
 		     border-right: #ffffff 0px solid;
 		     border-top: #ffffff 0px solid;
@@ -24,6 +33,17 @@
 			background-color: #40AFFE;
 			cursor:pointer; 
 		}
+		#scrollDiv {
+			height: 30px;
+			line-height: 30px;
+			margin: 50px auto;
+			overflow: hidden;
+		}
+		#scrollDiv li {
+			height: 30px;
+			cursor: pointer;
+			list-style: none;
+		}
 	</style>
 <body>
 	<div class="top" style="background-image: url(img/bag/zcbagtop.PNG);height: 85px;width: 100%;">
@@ -33,7 +53,16 @@
 			</div>
 			<div style="width: 20%;height:80px;float: left;"></div>
 			<div style="width: 40%;height:80px;float: left;">
-				<img src="img/imag/laba.PNG" style="float: left;"><img src="img/bag/font.PNG" height="30px" style="float: left;margin-top: 20px;" />
+				<div style="float: left;">
+					<img src="img/imag/laba.PNG">
+				</div>
+				<div id="scrollDiv" style="float: left;margin-top: 20px;">
+					<ul>
+						<li><img src="img/bag/font.PNG" height="30px" /></li>
+						<li><img src="img/bag/font2.PNG" width="200px" /></li>
+						<li><img src="img/bag/font3.PNG" height="30px" /></li>
+					</ul>
+				</div>
 			</div>
 	</div>
 	<div style="width: 1%;height: 400px; margin-top:80px ;float: left;">
@@ -44,7 +73,7 @@
 			<div class="col-md-3 column">
 			</div>
 			<div class="col-md-6 column">
-				<div style="width: 100%;height: 400px; margin-top:80px ;box-shadow: 0px -2px 1px #C7DDEF,0px 5px 40px #C7DDEF;text-align: center;">
+				<div style="width: 100%;height: 400px; margin-top:160px ;box-shadow: 0px -2px 1px #C7DDEF,0px 5px 40px #C7DDEF;text-align: center;background-color: #FFFFFF">
 					<div id="top" style="box-shadow: 0px 6px 10px #C7DDEF;color: #FFFFFF;height: 70px;width: 100%;text-align: center;" onclick="showt()"><font size="5" style="line-height: 70px;">用户登陆</font></div>
 					<form action="gologin" method="post">
 					<font size="4" color="#444444">账号</font><input class="logintxt" name="id" id="pass" value="请输入账号" type="text" style="width: 40%; height: 30px;margin-top: 60px;color: #9F9F9F;margin-left: 10px;" onclick="if(value=='请输入账号')value=''" onblur="if(!value)value='请输入账号'"/><br />
@@ -80,8 +109,8 @@
 			</div>
 		</div>
 	</div>
-	<div class="efoot" style="height: 30px; text-align: center; position: fixed;top: 750px;width: 100%;">	
-			<ul class="breadcrumb">
+	<div class="efoot" style="height: 60px; text-align: center; position: fixed;bottom: 0px;width: 100%;background-color: #FFFFFF">
+			<ul class="breadcrumb" style="background-color: #FFFFFF;line-height: 60px">
 					版权所有 瓜皮集团  有限公司
 				<li>
 					 <a href="#">服务协议</a>
@@ -129,4 +158,14 @@
 			$("#t2").show(500);
 		});
 	}
+    function autoscroll(obj) {
+        $(obj).find("ul:first").animate({
+            marginTop: "-30px"
+        }, 1000, function() {
+            $(this).css("marginTop", "0px").find("li:first").appendTo(this)
+        })
+    }
+    $(document).ready(function() {
+        setInterval('autoscroll("#scrollDiv")', 1500)
+    })
 </script>
