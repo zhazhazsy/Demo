@@ -12,8 +12,17 @@ public class evaAction extends ActionSupport {
     Map<String,Object> application = ax.getApplication();
     private String textarea;
     private String key;
+    private String number;
     String id = (String) application.get("myid");
     public static String sql="";
+
+    public String getNumber() {
+        return number;
+    }
+
+    public void setNumber(String number) {
+        this.number = number;
+    }
 
     public String getKey() {
         return key;
@@ -36,7 +45,7 @@ public class evaAction extends ActionSupport {
         if(textarea.equals("")){
             textarea="该用户未作出任何评价！";
         }
-        sql="update buy set state = 4,message = '"+textarea+"' where muneid = '"+key+"' and id = '"+id+"'";
+        sql="update buy set state = 4,message = '"+textarea+"' where muneid = '"+key+"' and id = '"+id+"' and number = '"+number+"'";
         try {
             res = dbBean.executeUpdate(sql);
         }catch (SQLException e) {

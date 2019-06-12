@@ -5,6 +5,7 @@ import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.util.ValueStack;
 import dao.dbBean;
 import user.mune;
+import user.mune2;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -93,10 +94,10 @@ public class goodsAction extends ActionSupport {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        List<mune> list2 = new ArrayList<mune>();
+        List<mune2> list2 = new ArrayList<mune2>();
         if (rs != null) {
             while (rs.next()) {
-                list2.add(new mune(rs.getString("muneid"),rs.getString("MenuName"),rs.getString("price"),rs.getString("amount")));
+                list2.add(new mune2(rs.getString("muneid"),rs.getString("MenuName"),rs.getString("price"),rs.getString("amount"),rs.getString("number")));
             }
             vs.set("list2", list2);
         }

@@ -245,15 +245,16 @@
         line-height: 70px;
         font-weight: 600;
         font-size: 40px;
-        opacity: 0.8;
+        opacity: 0.5;
         color: #fff;
     }
-</style>
+    header h1:hover{
+        opacity: 1;
+    }
 </style>
 <body>
 <div style="height: 700px;width: 100%;margin:0 auto;">
     <!--轮播-->
-
     <div class="lb_gl">
         <div class="container">
             <div class="pictureSlider poster-main">
@@ -329,7 +330,7 @@
 
 </div>
 <canvas id='world' width='500' height='500'></canvas>
-<header><h1 style="text-align: center"><a href="login.html">去登陆</a></h1></header>
+<header><a href="login.html"><h1 style="text-align: center;color:#ffffff;">Login</h1></a></header>
 
 
 </body>
